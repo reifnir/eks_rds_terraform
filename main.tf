@@ -62,6 +62,7 @@ module "eks_node" {
   eks_endpoint              = "${module.eks_cluster.eks_endpoint}"
   iam_instance_profile      = "${module.eks_iam_roles.iam_instance_profile}"
   security_group_node       = "${module.eks_sec_group.security_group_node}"
+  ec2_key_name              = "${var.ec2_key_name}"
 
   subnets = [
     "${module.subnets.subnets}",

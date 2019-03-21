@@ -19,7 +19,7 @@ resource "aws_db_instance" "db" {
   engine            = "${var.db_engine}"
   engine_version    = "${var.engine_version}"
   instance_class    = "${var.instance_class[terraform.workspace]}"
-  name              = "${terraform.workspace}"
+  #name              = "${terraform.workspace}" (don't need this for Oracle)
   username          = "${var.db_username}"
   password          = "${var.db_password}"
 

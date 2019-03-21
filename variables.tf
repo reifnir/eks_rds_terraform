@@ -1,16 +1,19 @@
 variable "access_key" {
-  description = "AWS ACCEE_KEY"
+  description = "AWS ACCESS_KEY"
 }
 
 variable "secret_key" {
-  description = "AWS SECRETE_KEY"
+  description = "AWS SECRET_KEY"
 }
 
 variable "aws_region" {
   description = "AWS region to launch servers."
   default     = "us-west-2"
 }
-
+variable "ec2_key_name" {
+  description = "Name of an existing key-pair (in the region!) used to connect to any created EC2 instances"
+  default = "eks-demo-worker-nodes"
+}
 variable "cidr_block" {
   description = "CIDR for the whole VPC"
 
@@ -22,12 +25,12 @@ variable "cidr_block" {
 
 variable "eks_cluster_name" {
   description = "cluster name"
-  default     = "terra"
+  default     = "eks-oracle-terra"
 }
 
 variable "identifier" {
   description = "Identifier for DB"
-  default     = "terra-db"
+  default     = "eks-oracle-terra-db"
 }
 
 variable "storage_type" {
@@ -40,26 +43,26 @@ variable "allocated_storage" {
 
   default = {
     prod = "100"
-    dev  = "10"
+    dev  = "20"
   }
 }
 
 variable "db_engine" {
   description = " DB engine"
-  default     = "postgres"
+  default     = "oracle-ee"
 }
 
 variable "engine_version" {
   description = "DB engine version"
-  default     = "9.6.6"
+  default     = "12.2"
 }
 
 variable "instance_class" {
-  description = "mashine type to be used"
+  description = "machine type to be used"
 
   default = {
-    prod = "db.t2.micro"
-    dev  = "db.t2.large"
+    prod = "db.t2.large"
+    dev  = "db.t2.medium"
   }
 }
 
