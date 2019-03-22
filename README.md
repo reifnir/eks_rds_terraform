@@ -459,7 +459,8 @@ kubectl get nodes
 
 ```sh
 kubectl apply -f \
-https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
+https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+
 ```
 
 #### Deploy heapster to enable container cluster monitoring and performance analysis on your cluster
