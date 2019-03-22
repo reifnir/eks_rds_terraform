@@ -23,7 +23,7 @@ data "template_file" "user_data" {
 
 resource "null_resource" "export_rendered_template" {
 	provisioner "local-exec" {
-	command = "cat > /data_output.sh <<EOL\n${data.template_file.user_data.rendered}\nEOL"
+	command = "cat > ./data_output.sh <<EOL\n${data.template_file.user_data.rendered}\nEOL"
 	}
 }
 
