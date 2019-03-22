@@ -1,4 +1,4 @@
-# Amazon AWS EKS and RDS PostgreSQL with terraform
+# Amazon AWS EKS and RDS ~~PostgreSQL~~ Oracle Enterprise Edition with terraform
 
 Assuming you already have Amazon AWS account we will need additional binaries for AWS CLI, terraform, kubectland aws-iam-authenticator. 
 
@@ -7,7 +7,7 @@ Assuming you already have Amazon AWS account we will need additional binaries fo
 * Initial tooling setup aws cli , kubectl and terraform
 * Creating terraform IAM account with access keys and access policy
 * Creating back-end storage for tfstate file in AWS S3 
-* Creating Kubernetes cluster on AWS EKS and RDS on PostgreSQL
+* Creating Kubernetes cluster on AWS EKS and RDS on Oracle EE
 * Working with kubernetes "kubectl" in EKS
 
 ## Initial tooling setup aws-cli, kubectl, terraform and aws-iam-authenticator
@@ -162,7 +162,7 @@ aws s3api put-bucket-versioning --bucket terra-state-bucket --versioning-configu
 
 [![asciicast](https://asciinema.org/a/195792.png)](https://asciinema.org/a/195792)
 
-## Creating Kubernetes cluster on AWS EKS and RDS on PostgreSQL
+## Creating Kubernetes cluster on AWS EKS and RDS on Oracle EE
 
 Now we can move into creating new infrastructure, eks and rds with terraform
 
@@ -328,7 +328,7 @@ Terraform modules will create
 * EKS cluster
 * Autoscaling Group will create nodes to be added to the cluster
 * Security group for RDS
-* RDS with PostgreSQL
+* RDS with Oracle EE
 
 > NOTE: very important to keep tags as if tags is not specify nodes will not be able to join cluster
 
