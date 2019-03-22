@@ -4,3 +4,4 @@
 *.tfvars
 .terraform
 tfplan
+yaml/config_map_aws_auth.yaml
